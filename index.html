@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>J-Mart | Online Grocery Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header class="header">
+    <a href="#home" class="brand">
+      🛒 <span>J-Mart</span>
+    </a>
+
+    <form id="searchForm">
+      <input
+        type="search"
+        id="searchInput"
+        placeholder="Search groceries..."
+      >
+      <button type="submit">Search</button>
+    </form>
+
+    <nav>
+      <a href="#home">Home</a>
+      <button type="button" onclick="showPage('login')">Login</button>
+      <button type="button" onclick="showPage('signup')">Sign Up</button>
+      <button type="button" onclick="showPage('cart')">
+        🛒 Cart (<span id="cartCount">0</span>)
+      </button>
+    </nav>
+  </header>
+
+  <!-- HOME PAGE -->
+  <main id="home" class="page">
+    <section class="hero">
+      <h1>Welcome to J-Mart</h1>
+      <p>Your daily essentials delivered fresh!</p>
+      <button type="button" onclick="showPage('products')">
+        Shop Now
+      </button>
+    </section>
+
+    <section class="catalog">
+      <h2>Our Products</h2>
+      <div id="productGrid" class="product-grid">
+        <!-- Products are added using script.js -->
+      </div>
+    </section>
+  </main>
+
+  <!-- LOGIN PAGE -->
+  <section id="login" class="page" hidden>
+    <div class="form-container">
+      <h2>Login to J-Mart</h2>
+
+      <form id="loginForm">
+        <label for="loginEmail">Email</label>
+        <input
+          type="email"
+          id="loginEmail"
+          placeholder="Enter your email"
+          required
+        >
+
+        <label for="loginPassword">Password</label>
+        <input
+          type="password"
+          id="loginPassword"
+          placeholder="Enter your password"
+          required
+        >
+
+        <button type="submit">Login</button>
+      </form>
+
+      <p>Don't have an account?
+        <a href="#signup" onclick="showPage('signup')">Sign Up</a>
+      </p>
+
+      <p id="loginMessage" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <!-- SIGN UP PAGE -->
+  <section id="signup" class="page" hidden>
+    <div class="form-container">
+      <h2>Create an Account</h2>
+
+      <form id="signupForm">
+        <label for="signupName">Full Name</label>
+        <input
+          type="text"
+          id="signupName"
+          placeholder="Enter your name"
+          required
+        >
+
+        <label for="signupEmail">Email</label>
+        <input
+          type="email"
+          id="signupEmail"
+          placeholder="Enter your email"
+          required
+        >
+
+        <label for="signupPassword">Password</label>
+        <input
+          type="password"
+          id="signupPassword"
+          placeholder="Create a password"
+          minlength="8"
+          required
+        >
+
+        <button type="submit">Create Account</button>
+      </form>
+
+      <p>Already have an account?
+        <a href="#login" onclick="showPage('login')">Login</a>
+      </p>
+
+      <p id="signupMessage" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <!-- PRODUCTS PAGE -->
+  <section id="products" class="page" hidden>
+    <h2>Shop Groceries</h2>
+    <div id="allProducts" class="product-grid"></div>
+  </section>
+
+  <!-- CART PAGE -->
+  <section id="cart" class="page" hidden>
+    <h2>Your Shopping Cart</h2>
+
+    <div id="cartItems">
+      <p>Your cart is empty.</p>
+    </div>
+
+    <h3>Total: ₹<span id="cartTotal">0</span></h3>
+
+    <button type="button" onclick="showPage('home')">
+      Continue Shopping
+    </button>
+
+    <button type="button" id="checkoutButton">
+      Proceed to Checkout
+    </button>
+    <p id="cartMessage" aria-live="polite"></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 J-Mart | Fresh Needs, Happy Homes</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
