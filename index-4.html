@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>J-Mart | Grocery Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <a class="brand" href="#"><span class="brand-icon">🛒</span><span><strong>J-Mart</strong><small>Fresh Needs, Happy Homes</small></span></a>
+  <form class="search" id="searchForm">
+    <input id="searchInput" type="search" placeholder="Search for products..." aria-label="Search products">
+    <button type="submit">⌕</button>
+  </form>
+  <nav>
+    <button class="nav-button" id="homeButton">⌂ Home</button>
+    <button class="nav-button" id="cartButton">🛒 Cart (<span id="cartCount">0</span>)</button>
+  </nav>
+</header>
+<section class="hero">
+  <div><h1>Your Daily Essentials<br>Delivered Fresh</h1><p>Groceries • Household • Better Living</p><button class="primary" id="shopButton">Shop Now →</button></div>
+  <div class="hero-art">🥬 🛒 🍅</div>
+</section>
+<main class="layout">
+  <aside class="sidebar">
+    <h2>☷ Categories</h2>
+    <div id="categories">
+      <button class="category active" data-category="All">All Products</button>
+      <button class="category" data-category="Groceries">🌾 Groceries</button>
+      <button class="category" data-category="Spices">🌶️ Spices</button>
+      <button class="category" data-category="Beverages">☕ Beverages</button>
+      <button class="category" data-category="Snacks">🍪 Snacks</button>
+      <button class="category" data-category="Household">🧽 Household Care</button>
+    </div>
+  </aside>
+  <section class="catalog" id="products">
+    <div class="catalog-heading"><h2 id="sectionTitle">All Products</h2>
+      <select id="sortSelect"><option value="popular">Sort: Popularity</option><option value="low">Price: Low to High</option><option value="high">Price: High to Low</option></select>
+    </div>
+    <p id="message" aria-live="polite"></p>
+    <div class="product-grid" id="productGrid"></div>
+  </section>
+</main>
+<footer>© 2026 J-Mart. All rights reserved. | About Us | Contact Us | Privacy Policy</footer>
+<script src="script.js"></script>
+</body>
+</html>
